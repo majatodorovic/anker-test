@@ -1,0 +1,76 @@
+import Link from "next/link";
+import Image from "next/image";
+import React from "react";
+
+function HeaderTop() {
+  return (
+    <div className="sectionPaddingX flex h-10 w-full items-center justify-between bg-black">
+      <div className="text-xs font-normal text-primary">
+        Besplatna isporuka za iznos porudžbine preko 12.000 RSD
+      </div>
+      <div className="flex items-center gap-4">
+        <Link href="/brend/soundcore">
+          <Image
+            src="/images/brands/brand1.png"
+            alt="Brand 1"
+            width={100}
+            height={28}
+            className="object-contain hover:opacity-60"
+          />
+        </Link>
+        <Link href="/brend/eufy">
+          <Image
+            src="/images/brands/brand2.png"
+            alt="Brand 2"
+            width={43}
+            height={28}
+            className="object-contain hover:opacity-60"
+          />
+        </Link>
+        <Link href="/brend/nebula">
+          <Image
+            src="/images/brands/brand3.png"
+            alt="Brand 3"
+            width={85}
+            height={28}
+            className="object-contain hover:opacity-60"
+          />
+        </Link>
+        <Link href="/brend/anker">
+          <Image
+            src="/images/brands/brand4.png"
+            alt="Brand 4"
+            width={105}
+            height={28}
+            className="object-contain hover:opacity-60"
+          />
+        </Link>
+      </div>
+      <div className="flex items-center">
+        <Link
+          href="/o-nama"
+          className="relative w-fit text-xs font-normal text-white"
+        >
+          O nama
+        </Link>
+        <div className="mx-2 h-3 w-[1px] bg-primary"></div>
+        <Link
+          href="/kontakt"
+          className="relative w-fit text-xs font-normal text-white"
+        >
+          Kontakt
+        </Link>
+        <div className="mx-2 h-3 w-[1px] bg-primary"></div>
+
+        <Link
+          href="/pomoć-pri-kupovini"
+          className="relative w-fit text-xs font-normal text-white"
+        >
+          Pomoć pri kupovini
+        </Link>
+      </div>
+    </div>
+  );
+}
+
+export default HeaderTop;
