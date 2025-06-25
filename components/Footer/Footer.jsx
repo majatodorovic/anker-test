@@ -7,32 +7,41 @@ const Footer = () => {
   return (
     <div className="sectionPaddingX mt-20 bg-black pt-[70px] text-white lg:mt-[100px] 2xl:mt-[120px]">
       <div className="flex items-center justify-between border-b border-l-0 border-r-0 border-t-0 border-b-primary pb-6 max-xl:flex-col">
-        <div>
-          <Link href={`/`}>
-            <Image
-              src={"/images/logo/logo.svg"}
-              width={214}
-              height={45}
-              alt="Croonus Logo"
-            />
-          </Link>
-        </div>
-        <div className="flex items-center max-xl:mt-10 max-sm:flex-col max-sm:gap-1 sm:gap-5">
-          <div className="flex flex-col">
-            <div>Pozovite nas:</div>
-            <a
-              href={`tel:${process.env.TELEPHONE}`}
-              className="font-light hover:text-primary"
-            >
-              {process.env.TELEPHONE}
-            </a>
-          </div>
-          <div className="bg-primary sm:h-8 sm:w-[1px]"></div>
+        <div className="flex items-center gap-20 max-xl:flex-col max-xl:gap-0">
           <div>
-            <div>Anker Experience Store:</div>
-            <div className="font-light">TC Galerija 2. sprat, Beograd</div>
+            <Link href={`/`}>
+              <Image
+                src={"/images/logo/logo.svg"}
+                width={214}
+                height={45}
+                alt="Croonus Logo"
+              />
+            </Link>
           </div>
+          <div className="flex items-center max-xl:mt-10 max-sm:flex-col max-sm:gap-1 sm:gap-5">
+            <div className="flex flex-col">
+              <div>Pozovite nas:</div>
+              <a
+                href={`tel:${process.env.TELEPHONE}`}
+                className="font-light hover:text-primary"
+              >
+                {process.env.TELEPHONE}
+              </a>
+            </div>
+            <div className="bg-primary sm:h-8 sm:w-[1px]"></div>
+            <div>
+              <div>Anker Experience Store:</div>
+              <Link
+              href="https://www.google.com/maps/place/%D0%A2%D0%A6+%22%D0%93%D0%B0%D0%BB%D0%B5%D1%80%D0%B8%D1%98%D0%B0%22/@44.8021781,20.4440487,771m/data=!3m1!1e3!4m10!1m2!2m1!1sTC+Galerija+2.+sprat,+Beograd!3m6!1s0x475a6552e46a468f:0x8a7d95d9015cc2cf!8m2!3d44.8027352!4d20.4464364!15sCh1UQyBHYWxlcmlqYSAyLiBzcHJhdCwgQmVvZ3JhZFodIht0YyBnYWxlcmlqYSAyIHNwcmF0IGJlb2dyYWSSAQ9zaG9wcGluZ19jZW50ZXKaASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVUmhiVXBFWDFsQkVBRaoBbAoNL2cvMTFma3ZwbWZieBABKhciE3RjIGdhbGVyaWphIDIgc3ByYXQoHTIfEAEiG7IwwGHsc2T_Q6JoeCCbRl_jeT44WH99t87QaDIfEAIiG3RjIGdhbGVyaWphIDIgc3ByYXQgYmVvZ3JhZOABAPoBBQjRARAv!16s%2Fg%2F11fkvpmfbx?entry=ttu"
+              target="_blank"
+            >
+              <div className="font-light">TC Galerija 2. sprat, Beograd</div>
+              </Link>
+            </div>
+          </div>
+       
         </div>
+        
         <div className="flex items-center gap-1 max-xl:mt-10 max-sm:flex-col sm:gap-5">
           <a
             href="https://www.facebook.com/Anker.fans"
@@ -41,6 +50,15 @@ const Footer = () => {
             className="hover:text-primary"
           >
             Facebook
+          </a>
+          <div className="bg-primary sm:mx-2 sm:h-3 sm:w-[1px]"></div>
+          <a
+            href="https://www.instagram.com/ankersrbija?igsh=OTBpOHZ2ZG0xZW9k"
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-primary"
+          >
+            Instagram
           </a>
           <div className="bg-primary sm:mx-2 sm:h-3 sm:w-[1px]"></div>
           <a
@@ -65,7 +83,7 @@ const Footer = () => {
             <div className="bg-primary sm:mx-2 sm:h-3 sm:w-[1px]"></div>
 
             <Link
-              href={`/strana/reklamacije#politika-reklamacija`}
+              href={`/strana/uslovi-koriscenja#politika-reklamacija`}
               className="hover:text-primary"
             >
               Reklamacije
@@ -73,7 +91,7 @@ const Footer = () => {
             <div className="bg-primary sm:mx-2 sm:h-3 sm:w-[1px]"></div>
 
             <Link
-              href={`/strana/pravo-na-odustajanje#odustanak-od-ugovora`}
+              href={`/strana/uslovi-koriscenja#odustanak-od-ugovora`}
               className="hover:text-primary"
             >
               Pravo na odustajanje
@@ -81,7 +99,7 @@ const Footer = () => {
             <div className="bg-primary sm:mx-2 sm:h-3 sm:w-[1px]"></div>
 
             <Link
-              href={`/strana/zamena-artikala`}
+              href={`/strana/uslovi-koriscenja#politika-reklamacija`}
               className="hover:text-primary"
             >
               Zamena artikala
@@ -212,7 +230,12 @@ const Footer = () => {
             />
           </div>
           <div className="text-[15px]">
+          <Link
+              href="https://www.google.com/maps/place/%D0%9A%D0%BD%D0%B5%D0%B3%D0%B8%D1%9A%D0%B5+%D0%97%D0%BE%D1%80%D0%BA%D0%B5+25,+%D0%91%D0%B5%D0%BE%D0%B3%D1%80%D0%B0%D0%B4+11000/@44.8009529,20.4692087,771m/data=!3m2!1e3!4b1!4m6!3m5!1s0x475a700af8d1c09f:0xb9b11943161101fc!8m2!3d44.8009529!4d20.4692087!16s%2Fg%2F11bw4hbgv3?entry=ttu"
+              target="_blank"
+            >
             <div>Kneginje Zorke 25, Beograd, Srbija</div>
+            </Link>
             <div className="flex items-center max-sm:flex-col max-sm:items-start sm:gap-2">
               <a
                 href={`tel:+381 (11) 20 90 801`}

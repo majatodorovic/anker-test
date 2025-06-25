@@ -72,7 +72,7 @@ export const Select = ({
           required={required}
           id={name}
           value={selected?.id || ""}
-          className={`w-fit cursor-pointer text-black focus:text-black focus:outline-none focus:ring-0 ${
+          className={`cursor-pointer text-black focus:text-black focus:outline-none focus:ring-0 ${
             errors?.includes("delivery_method_options")
               ? `border border-red-500`
               : ``

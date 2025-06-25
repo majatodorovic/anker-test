@@ -112,95 +112,98 @@ const Header = () => {
       >
         <HeaderTop />
         <div className="sectionPaddingX flex h-20 items-center justify-between gap-5">
-          <Link href="/">
-            <Image
-              src="/images/logo/logo.svg"
-              width={185}
-              height={39}
-              className="min-w-[100px] object-cover"
-              alt="logo"
-            />
-          </Link>
-          <div className={`flex items-center gap-4`}>
-            {categoriesMain?.map((category, index) => {
-              const isCategory = category?.isCategory ?? true;
-              return isCategory ? (
-                category?.children ? (
-                  <Link
-                    href={`/${category?.link?.link_path}`}
-                    key={index}
-                    className={`${
-                      category?.id === activeCategory?.id ||
-                      pathname.includes(category?.slug)
-                        ? "activeCategory after:-bottom-[30px]"
-                        : "font-normal"
-                    } activeCategoryHover relative block w-fit text-nowrap text-[13px] text-black hover:after:-bottom-[30px]`}
-                    onMouseEnter={() => {
-                      setActiveCategory({
-                        id:
-                          category?.id === activeCategory?.id
-                            ? null
-                            : category?.id,
-                        name:
-                          category?.name === activeCategory?.name
-                            ? null
-                            : category?.name,
-                        slug:
-                          category?.slug === activeCategory?.slug
-                            ? null
-                            : category?.slug,
-                        data: category?.children ?? [],
-                        image: category?.image ?? null,
-                        open: true,
-                      });
-                      setHoveredCategory(category);
-                    }}
-                  >
-                    {category?.name}
-                  </Link>
+          <div className="flex items-center gap-10">
+            <Link href="/">
+              <Image
+                src="/images/logo/logo.svg"
+                width={185}
+                height={39}
+                className="min-w-[100px] object-cover"
+                alt="logo"
+              />
+            </Link>
+            <div className={`flex items-center gap-4`}>
+              {categoriesMain?.map((category, index) => {
+                const isCategory = category?.isCategory ?? true;
+                return isCategory ? (
+                  category?.children ? (
+                    <Link
+                      href={`/${category?.link?.link_path}`}
+                      key={index}
+                      className={`${
+                        category?.id === activeCategory?.id ||
+                        pathname.includes(category?.slug)
+                          ? "activeCategory after:-bottom-[30px]"
+                          : "font-normal"
+                      } activeCategoryHover relative block w-fit text-nowrap text-[13px] text-black hover:after:-bottom-[30px]`}
+                      onMouseEnter={() => {
+                        setActiveCategory({
+                          id:
+                            category?.id === activeCategory?.id
+                              ? null
+                              : category?.id,
+                          name:
+                            category?.name === activeCategory?.name
+                              ? null
+                              : category?.name,
+                          slug:
+                            category?.slug === activeCategory?.slug
+                              ? null
+                              : category?.slug,
+                          data: category?.children ?? [],
+                          image: category?.image ?? null,
+                          open: true,
+                        });
+                        setHoveredCategory(category);
+                      }}
+                    >
+                      {category?.name}
+                    </Link>
+                  ) : (
+                    <Link
+                      href={`/${category?.link?.link_path}`}
+                      key={index}
+                      onClick={() => resetActiveCategory()}
+                      onMouseEnter={() => setHoveredCategory(category)}
+                      onMouseLeave={() => setHoveredCategory(null)}
+                    >
+                      <span
+                        className={`activeCategoryHover relative block w-fit text-[13px] font-semibold text-black hover:after:-bottom-[30px] ${
+                          pathname?.includes(category?.slug) &&
+                          category?.id !== 0
+                            ? "activeCategory after:-bottom-[30px]"
+                            : ""
+                        }`}
+                      >
+                        {category?.name}
+                      </span>
+                    </Link>
+                  )
                 ) : (
                   <Link
-                    href={`/${category?.link?.link_path}`}
+                    href={`${category?.slug}`}
                     key={index}
-                    onClick={() => resetActiveCategory()}
-                    onMouseEnter={() => setHoveredCategory(category)}
-                    onMouseLeave={() => setHoveredCategory(null)}
+                    onClick={resetActiveCategory}
                   >
                     <span
-                      className={`activeCategoryHover relative block w-fit text-[13px] font-semibold text-black hover:after:-bottom-[30px] ${
+                      className={`activeCategoryHover relative block w-fit text-[13px] text-black hover:after:-bottom-[30px] ${
                         pathname?.includes(category?.slug) && category?.id !== 0
                           ? "activeCategory after:-bottom-[30px]"
-                          : ""
+                          : pathname === category?.slug && category?.id === 0
+                            ? "activeCategory after:-bottom-[30px]"
+                            : ""
                       }`}
                     >
                       {category?.name}
                     </span>
                   </Link>
-                )
-              ) : (
-                <Link
-                  href={`${category?.slug}`}
-                  key={index}
-                  onClick={resetActiveCategory}
-                >
-                  <span
-                    className={`activeCategoryHover relative block w-fit text-[13px] text-black hover:after:-bottom-[30px] ${
-                      pathname?.includes(category?.slug) && category?.id !== 0
-                        ? "activeCategory after:-bottom-[30px]"
-                        : pathname === category?.slug && category?.id === 0
-                          ? "activeCategory after:-bottom-[30px]"
-                          : ""
-                    }`}
-                  >
-                    {category?.name}
-                  </span>
-                </Link>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
           <div className="flex items-center">
             <SearchProducts />
-            <div className="ml-2 mr-4 h-4 w-[1px] bg-primary"></div>
+            <div className="mx-[18px] h-4 w-[1px] bg-primary"></div>
             <HeaderIcons />
           </div>
         </div>
@@ -210,8 +213,10 @@ const Header = () => {
             className={`absolute right-0 top-[121px] z-[100] w-full bg-white max-lg:hidden`}
           >
             <div className="relative h-full px-20 pb-14 pt-8">
-              <div className="flex h-full gap-x-10">
-                <div className={`flex w-[250px] flex-col items-start gap-1`}>
+              <div className="flex h-full">
+                <div
+                  className={`flex w-[205px] flex-col items-start gap-1 pr-4`}
+                >
                   {landingPagesList?.items?.map((item, index) => {
                     return (
                       <Link
@@ -232,7 +237,7 @@ const Header = () => {
                         pathname.includes(category?.slug)
                           ? "text-primary"
                           : ""
-                      } block text-left text-lg font-medium text-black hover:underline`}
+                      } block text-left text-lg font-medium text-black hover:text-primary`}
                       onClick={() => {
                         setActiveSubCategory({
                           id: category?.id,
@@ -254,7 +259,7 @@ const Header = () => {
                     <div className="flex items-center gap-1 text-sm">
                       <Link
                         href={`${hoveredCategory?.slug_path ?? activeCategory?.slug}`}
-                        className="font-light"
+                        className="font-light hover:text-primary"
                       >
                         Pogledajte sve
                       </Link>
@@ -278,7 +283,7 @@ const Header = () => {
                             alt={product.basic_data.name}
                             width={100}
                             height={100}
-                            className="ransition-all h-[90px] w-[90px] min-w-[90px] bg-secondary object-contain transition-transform duration-300 duration-500 ease-in-out group-hover:scale-105"
+                            className="ransition-all h-[90px] w-[90px] min-w-[90px] bg-secondary object-contain transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:bg-primary"
                           />
                           <h3 className="ransition-all mt-2 line-clamp-2 pr-4 text-lg font-light duration-300 ease-in-out group-hover:text-white">
                             {product.basic_data.name}

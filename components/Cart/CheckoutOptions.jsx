@@ -61,6 +61,9 @@ const CheckoutOptions = ({
     }
   };
 
+  console.log(delivery_options);
+  console.log(delivery_form);
+
   return (
     <>
       <div className={`col-span-2 lg:col-span-1`}>
@@ -127,6 +130,7 @@ const CheckoutOptions = ({
                           errors={errors}
                           fields={delivery_form?.fields}
                           onChange={onChange}
+                          className="w-full"
                         />
                       )}
                   </div>

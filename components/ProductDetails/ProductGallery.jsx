@@ -201,7 +201,7 @@ export const ProductGallery = ({ productGallery, variantKeyArray }) => {
   }, []);
 
   return (
-    <div className="col-span-4 h-fit gap-10 overflow-hidden md:flex md:flex-col lg:col-span-2 2xl:col-span-3">
+    <div className="col-span-4 h-fit gap-10 overflow-hidden md:flex md:flex-col lg:col-span-2 2xl:col-span-4">
       <Swiper
         spaceBetween={10}
         thumbs={{

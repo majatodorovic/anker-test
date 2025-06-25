@@ -49,22 +49,22 @@ function HeaderTop() {
       <div className="flex items-center">
         <Link
           href="/o-nama"
-          className="relative w-fit text-xs font-normal text-white"
+          className="relative w-fit text-xs font-normal text-white hover:text-primary"
         >
           O nama
         </Link>
-        <div className="mx-2 h-3 w-[1px] bg-primary"></div>
+        <div className="mx-[18px] h-3 w-[1px] bg-primary"></div>
         <Link
           href="/kontakt"
-          className="relative w-fit text-xs font-normal text-white"
+          className="relative w-fit text-xs font-normal text-white hover:text-primary"
         >
           Kontakt
         </Link>
-        <div className="mx-2 h-3 w-[1px] bg-primary"></div>
+        <div className="mx-[18px] h-3 w-[1px] bg-primary"></div>
 
         <Link
           href="/pomoć-pri-kupovini"
-          className="relative w-fit text-xs font-normal text-white"
+          className="relative w-fit text-xs font-normal text-white hover:text-primary"
         >
           Pomoć pri kupovini
         </Link>

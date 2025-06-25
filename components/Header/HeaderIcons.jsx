@@ -9,7 +9,7 @@ const HeaderIcons = () => {
   const { data: wishListCount } = useWishlistBadge();
 
   return (
-    <div className="flex items-center gap-4">
+    <div className="flex items-center gap-[18px]">
       <Link href="/login" className="group">
         <Image
           src="/icons/user.png"

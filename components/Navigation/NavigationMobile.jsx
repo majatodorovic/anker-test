@@ -37,15 +37,12 @@ const NavigationMobile = () => {
     }
   };
   useEffect(() => {
-    const handleBodyOverflow = () => {
-      if (menuOpen) {
-        document.body.style.overflow = "hidden";
-      } else {
-        document.body.style.overflow = "auto";
-      }
-    };
-    handleBodyOverflow();
-  }, [menuOpen]);
+    if (menuOpen || searchOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [menuOpen, searchOpen]);
 
   const [searchVisible, setSearchVisible] = useState(false);
 
@@ -106,16 +103,6 @@ const NavigationMobile = () => {
       setExpandedCategory(category.id);
     }
   };
-
-  useEffect(() => {
-    if (searchOpen) {
-      document.body.style.overflow = "hidden";
-    } else if (!menuOpen) {
-      document.body.style.overflow = "auto";
-    }
-    // If both search and menu are closed, allow scroll
-    // If menu is open, let the menu's effect handle it
-  }, [searchOpen, menuOpen]);
 
   return (
     <>

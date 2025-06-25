@@ -169,7 +169,7 @@ export const renderDefaultPrices = (data = {}) => {
       return (
         <p
           className={`!font-semibold text-left ${
-            data?.is_details ? "!text-xl" : "!text-[20px]"
+            data?.is_details ? "!text-xl lg:!text-[28px]" : "!text-[20px]"
           }`}
         >
           {currencyFormat(price?.min?.price?.original, price?.currency)}
@@ -179,7 +179,7 @@ export const renderDefaultPrices = (data = {}) => {
       return (
         <p
           className={`!font-semibold text-left ${
-            data?.is_details ? "!text-xl" : "!text-[20px]"
+            data?.is_details ? "!text-xl lg:!text-[28px]" : "!text-[20px]"
           }`}
         >
           {currencyFormat(price?.min?.price?.original, price?.currency)} -{" "}
@@ -191,7 +191,7 @@ export const renderDefaultPrices = (data = {}) => {
     return (
       <p
         className={`!font-semibold text-left ${
-          data?.is_details ? "!text-xl" : "!text-[20px]"
+          data?.is_details ? "!text-xl lg:!text-[28px]" : "!text-[20px]"
         }`}
       >
         {currencyFormat(price?.price?.original, price?.currency)}
@@ -243,13 +243,13 @@ export const renderDiscountPrices = (data = {}) => {
           <p className={`font-semibold text-[20px] ${data?.is_details ? "!font-bold !text-xl lg:!text-2xl " : ""}`}>
             {currencyFormat(price?.min?.price?.discount, price?.currency)}
           </p>
-          {data?.is_details && ( <div className="w-[1px] h-4 max-sm:hidden" />)}
+          {data?.is_details && ( <div className="w-[1px] bg-[#aeaeae] h-4 max-sm:hidden" />)}
         <div className="flex items-center gap-3">
-        <div className={`line-through text-base group font-light relative ${data?.is_details ? "!text-xl lg:!text-2xl" : ""}`}>
+        <div className={`line-through text-base group font-light relative text-[#404041] ${data?.is_details ? "!text-xl lg:!text-[23px]" : ""}`}>
             {currencyFormat(price?.min?.price?.original, price?.currency)}
           </div>
           {data?.is_details && (
-            <div className="bg-[#3ea400] rounded-lg font-semibold px-2  text-white">
+            <div className="bg-[#3ea400] rounded-[10px] font-semibold px-2  text-white">
               -{discount_percent}%
             </div>
           )}
@@ -261,18 +261,18 @@ export const renderDiscountPrices = (data = {}) => {
         <div
         className={`flex  flex-row flex-wrap text-left items-center gap-3`}
         >
-          <p className={`font-semibold text-[20px] ${data?.is_details ? "!font-bold !text-xl lg:!text-2xl" : ""}`}>
+          <p className={`font-semibold text-[20px] ${data?.is_details ? "!font-bold !text-xl lg:!text-[28px]" : ""}`}>
             {currencyFormat(price?.min?.price?.discount, price?.currency)} -{" "}
             {currencyFormat(price?.max?.price?.discount, price?.currency)}
           </p>
-          {data?.is_details && ( <div className="w-[1px] h-4 max-sm:hidden" />)}
+          {data?.is_details && ( <div className="w-[1px] bg-[#aeaeae] h-4 max-sm:hidden" />)}
           <div className="flex items-center gap-3">
-            <div className={`line-through text-base group font-light relative ${data?.is_details ? "!text-xl lg:!text-2xl" : ""}`}>
+            <div className={`line-through text-base group font-light relative ${data?.is_details ? "!text-xl lg:!text-[23px]" : ""}`}>
             {currencyFormat(price?.min?.price?.original, price?.currency)} -{" "}
             {currencyFormat(price?.max?.price?.original, price?.currency)}
           </div>
           {data?.is_details && (
-            <div className="bg-[#3ea400] rounded-lg font-semibold px-2  text-white">
+            <div className="bg-[#3ea400] rounded-[10px] font-semibold px-2  text-white">
               -{discount_percent}%
             </div>
           )}
@@ -285,16 +285,16 @@ export const renderDiscountPrices = (data = {}) => {
       <div
       className={`flex  flex-row flex-wrap text-left items-center gap-3`}
       >
-        <p className={`font-semibold text-[20px] ${data?.is_details ? "!font-bold !text-xl lg:!text-2xl" : ""}`}>
+        <p className={`font-semibold text-[20px] ${data?.is_details ? "!font-bold !text-xl lg:!text-[28px]" : ""}`}>
           {currencyFormat(price?.price?.discount, price?.currency)}
         </p>
-        {data?.is_details && ( <div className="w-[1px] h-4 max-sm:hidden" />)}
+        {data?.is_details && ( <div className="w-[1px] bg-[#aeaeae] h-4 max-sm:hidden" />)}
         <div className="flex items-center gap-3">
-        <div className={`line-through text-base group font-light relative ${data?.is_details ? " !text-xl lg:!text-2xl" : ""}`}>
+          <div className={`line-through text-base group font-light relative text-[#404041]  ${data?.is_details ? " !text-xl lg:!text-[23px]" : ""}`}>
           {currencyFormat(price?.price?.original, price?.currency)}
         </div>
         {data?.is_details && (
-            <div className="bg-[#3ea400] rounded-lg font-semibold px-2  text-white">
+            <div className="bg-[#3ea400] rounded-[10px] font-semibold px-2  text-white">
               -{discount_percent}%
             </div>
           )}

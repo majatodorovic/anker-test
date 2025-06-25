@@ -31,7 +31,11 @@ const GeneralTermsOfUseField = ({
         </label>
         <label htmlFor="agreed" className={`text-lg font-light`}>
           Saglasan sam sa{" "}
-          <a className={`underline`} href={`/`} target={`_blank`}>
+          <a
+            className={`underline`}
+            href={`/strana/uslovi-koriscenja`}
+            target={`_blank`}
+          >
             <span>Opštim uslovima korišćenja</span>
           </a>
         </label>

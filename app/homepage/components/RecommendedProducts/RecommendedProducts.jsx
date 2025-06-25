@@ -6,7 +6,30 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
 
 const RecommendedProducts = ({ recommendedProducts }) => {
-  const [products, setProducts] = useState(recommendedProducts);
+  const getFirstUniqueCategoryId = () => {
+    for (const category of recommendedProducts) {
+      const uniqueCategories = category?.categories?.filter(
+        (item, index, arr) =>
+          arr.findIndex((el) => el.name === item.name) === index,
+      );
+      if (uniqueCategories && uniqueCategories[0]?.id) {
+        return uniqueCategories[0].id;
+      }
+    }
+    return null;
+  };
+
+  const [selectedCategory, setSelectedCategory] = useState(
+    getFirstUniqueCategoryId(),
+  );
+
+  const [products, setProducts] = useState(() => {
+    const firstId = getFirstUniqueCategoryId();
+    if (!firstId) return recommendedProducts;
+    return recommendedProducts.filter(
+      (item) => item?.categories[0]?.id === firstId,
+    );
+  });
   const [swiper, setSwiper] = useState(null);
   const [isFirstItem, setIsFirstItem] = useState(true);
   const [showNavigation, setShowNavigation] = useState(true);
@@ -23,7 +46,6 @@ const RecommendedProducts = ({ recommendedProducts }) => {
   const uniqueNames = [];
   const uniqueIds = [];
   const pathname = usePathname();
-  const [selectedCategory, setSelectedCategory] = useState(null);
 
   const [loading, setLoading] = useState(true);
 
@@ -171,7 +193,7 @@ const RecommendedProducts = ({ recommendedProducts }) => {
                 </SwiperSlide>
               );
             })}
-            <div className="sm:shadow-white-glow-lg absolute right-0 top-0 z-50 h-full" />
+            <div className="absolute right-0 top-0 z-50 h-full sm:shadow-white-glow-lg" />
             {showNavigation && (
               <>
                 <div

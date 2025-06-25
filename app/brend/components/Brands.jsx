@@ -43,7 +43,7 @@ const Brands = () => {
     <>
       <BreadcrumbsStatic
         breadcrumbs={[{ name: slug, url: `/brend/${slug}` }]}
-        title={`Brend - ${slug}`}
+        title={`Brend - ${slug.charAt(0).toUpperCase() + slug.slice(1)}`}
       />
       <div className="sectionPaddingX sectionPaddingY bg-lightGray">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">

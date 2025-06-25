@@ -35,7 +35,7 @@ export const ProductInfo = ({
 
   return (
     <div
-      className="sectionPaddingX grid grid-cols-4 gap-x-10 2xl:grid-cols-5 2xl:gap-x-[70px]"
+      className="sectionPaddingX grid grid-cols-4 gap-x-10 2xl:grid-cols-7 2xl:gap-x-[70px]"
       data-aos="fade-up"
     >
       <ProductGallery
@@ -44,7 +44,7 @@ export const ProductInfo = ({
         id={id}
       />
 
-      <div className="col-span-4 lg:col-span-2">
+      <div className="col-span-4 lg:col-span-2 2xl:col-span-3">
         <div className="flex flex-col max-lg:mt-10">
           <Suspense fallback={<Loader />}>
             <div className="flex flex-col gap-2">
@@ -78,7 +78,7 @@ export const ProductInfo = ({
                     Ušteda: &nbsp;{currencyFormat(discount_number)}
                   </p>
                   <div className="my-1 h-[2px] w-full bg-[#d9d9d9]"></div>
-                  <p className="text-right text-sm font-normal text-gray-500">
+                  <p className="text-right text-sm font-medium text-[#5b5b5c]">
                     Akcijska cena važi od:{" "}
                     {formatDate(price?.discount?.campaigns[0]?.duration?.from)}{" "}
                     do{" "}

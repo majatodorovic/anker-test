@@ -39,7 +39,7 @@ const SideFilters = ({
   };
 
   return (
-    <div className="max-h-[calc(100vh-200px)] w-[310px] min-w-[310px] overflow-y-auto max-xl:hidden">
+    <div className="w-[310px] min-w-[310px] overflow-y-auto max-xl:hidden">
       <button
         className="mb-6 flex items-center gap-3 text-sm underline"
         onClick={handleClearFilters}
