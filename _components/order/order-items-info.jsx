@@ -7,12 +7,12 @@ import { currencyFormat } from "@/helpers/functions";
 export const OrderItemsInfo = ({ order }) => {
   return (
     <div
-      className={`col-span-2 md:col-span-1 grid gap-y-[1.5rem] h-fit gap-x-[1.5rem] grid-cols-2 md:py-10 max-md:mt-5`}
+      className={`col-span-2 grid h-fit grid-cols-2 gap-x-[1.5rem] gap-y-[1.5rem] max-md:mt-5 md:col-span-1 md:py-10`}
     >
       <div
-        className={`col-span-2 xl:col-span-1 relative flex flex-col bg-[#f0f0f080] rounded-lg p-[2rem] h-[245px]`}
+        className={`relative col-span-2 flex h-[245px] flex-col rounded-lg bg-[#f0f0f080] p-[2rem] xl:col-span-1`}
       >
-        <h1 className={`font-semibold text- border-b-2 border-b-gray-300`}>
+        <h1 className={`text- border-b-2 border-b-gray-300 font-semibold`}>
           Pregled porudžbenice
         </h1>
         <p className={`mt-2 text-sm`}>
@@ -25,9 +25,9 @@ export const OrderItemsInfo = ({ order }) => {
         </p>
       </div>
       <div
-        className={`col-span-2 xl:col-span-1 relative flex flex-col bg-[#f0f0f080] rounded-lg p-[2rem] h-[245px]`}
+        className={`relative col-span-2 flex h-[245px] flex-col rounded-lg bg-[#f0f0f080] p-[2rem] xl:col-span-1`}
       >
-        <h1 className={`font-semibold text- border-b-2 border-b-gray-300`}>
+        <h1 className={`text- border-b-2 border-b-gray-300 font-semibold`}>
           Podaci o kupcu
         </h1>
         <p className={`mt-2 text-sm`}>
@@ -63,22 +63,24 @@ export const OrderItemsInfo = ({ order }) => {
         </p>
       </div>
       <div
-        className={`col-span-2 xl:col-span-1 relative flex flex-col bg-[#f0f0f080] rounded-lg p-[2rem] h-[245px] overflow-y-auto scrollCustom`}
+        className={`scrollCustom relative col-span-2 flex h-[245px] flex-col overflow-y-auto rounded-lg bg-[#f0f0f080] p-[2rem] xl:col-span-1`}
       >
-        <h1 className={`font-semibold text- border-b-2 border-b-gray-300`}>
+        <h1 className={`text- border-b-2 border-b-gray-300 font-semibold`}>
           Poručeni artikli
         </h1>
         {order?.items?.map((item, itemIndex) => {
           return (
             <Link href={`/${item?.basic_data?.slug}`} key={itemIndex}>
-              <div className={`flex mt-3 items-center gap-10`}>
+              <div className={`mt-3 flex items-center gap-10`}>
                 <div>
-                  <Image
-                    src={item?.basic_data?.image}
-                    alt={``}
-                    width={100}
-                    height={100}
-                  />
+                  {item?.basic_data?.image && (
+                    <Image
+                      src={item?.basic_data?.image}
+                      alt={``}
+                      width={100}
+                      height={100}
+                    />
+                  )}
                 </div>
                 <div className={`flex flex-col gap-y-1`}>
                   <h1 className={`text-sm font-semibold`}>
@@ -86,7 +88,7 @@ export const OrderItemsInfo = ({ order }) => {
                   </h1>
                   <p className={`text-xs`}>{item?.basic_data?.sku}</p>
                   <p
-                    className={`bg-[#f8ce5d] px-2 w-fit text-xs mt-2 font-bold text-center`}
+                    className={`mt-2 w-fit bg-[#f8ce5d] px-2 text-center text-xs font-bold`}
                   >
                     {currencyFormat(item?.price?.total, item?.price?.currency)}
                   </p>
@@ -97,9 +99,9 @@ export const OrderItemsInfo = ({ order }) => {
         })}
       </div>
       <div
-        className={`col-span-2 xl:col-span-1 relative flex flex-col pb-7 bg-[#f0f0f080] rounded-lg p-[2rem] h-[245px] max-md:mb-5`}
+        className={`relative col-span-2 flex h-[245px] flex-col rounded-lg bg-[#f0f0f080] p-[2rem] pb-7 max-md:mb-5 xl:col-span-1`}
       >
-        <h1 className={`font-semibold text- border-b-2 border-b-gray-300`}>
+        <h1 className={`text- border-b-2 border-b-gray-300 font-semibold`}>
           Podaci o prodavcu
         </h1>
         <p className={`mt-2 text-sm`}>

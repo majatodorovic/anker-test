@@ -4,24 +4,24 @@ import Link from "next/link";
 // Mapa slugova u naslove sa dijakritikom
 const slugToTitleMap = {
   "uslovi-koriscenja": "Uslovi korišćenja",
-  
-  // Dodaj sve slugove koje koristiš
+  "opsti-uslovi-poslovanja": "Opšti uslovi poslovanja",
+  "politika-kolacica": "Politika kolačića",
+  // Dodaj ostale slugove koje koristiš
 };
 
 // Funkcija koja vraća pravi naslov iz sluga
 const slugToTitle = (slug) => {
   if (!slug) return "";
-  return slugToTitleMap[slug] || 
+  return (
+    slugToTitleMap[slug] ||
     slug
       .split("-")
       .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(" ");
+      .join(" ")
+  );
 };
 
-const BreadcrumbsStatic = ({ title, breadcrumbs }) => {
-  console.log("📌 title:", title);
-  console.log("📌 breadcrumbs:", breadcrumbs);
-
+const BreadcrumbsStatic = ({ title, breadcrumbs = [] }) => {
   return (
     <div data-aos="fade-right" className="sectionPaddingX w-full bg-white">
       <div className="mb-20 flex items-center gap-2 overflow-x-auto pb-2 pt-10">
@@ -34,7 +34,7 @@ const BreadcrumbsStatic = ({ title, breadcrumbs }) => {
 
           return (
             <div key={index} className="flex">
-              <span className="mr-2 text-base">/</span>
+              <span className="mx-2 text-base">/</span>
               {breadcrumb.url ? (
                 <Link
                   href={`/${slug}`}

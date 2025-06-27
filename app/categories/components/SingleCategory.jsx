@@ -43,6 +43,14 @@ export const SingleCategory = ({ slug, path, base_url, text = "" }) => {
             }}
           ></p>
         )}
+        {singleCategory?.basic_data?.description && (
+          <p
+            className="max-w-ful mt-14 w-full font-light 2xl:text-xl"
+            dangerouslySetInnerHTML={{
+              __html: singleCategory?.basic_data?.description,
+            }}
+          ></p>
+        )}
         {singleCategory?.images?.image && (
           <Image
             src={singleCategory?.images?.image}

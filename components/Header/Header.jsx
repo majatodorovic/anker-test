@@ -156,6 +156,7 @@ const Header = () => {
                         });
                         setHoveredCategory(category);
                       }}
+                      onClick={resetActiveCategory}
                     >
                       {category?.name}
                     </Link>
@@ -260,6 +261,7 @@ const Header = () => {
                       <Link
                         href={`${hoveredCategory?.slug_path ?? activeCategory?.slug}`}
                         className="font-light hover:text-primary"
+                        onClick={resetActiveCategory}
                       >
                         Pogledajte sve
                       </Link>
@@ -277,6 +279,7 @@ const Header = () => {
                           key={product.id}
                           href={`${product.slug_path}`}
                           className="group flex h-[128px] w-[300px] items-center gap-5 bg-secondary pl-2 transition-all duration-300 ease-in-out hover:bg-primary 3xl:w-[350px]"
+                          onClick={resetActiveCategory}
                         >
                           <Image
                             src={product.image[0] ?? "/images/placeholder.jpg"}

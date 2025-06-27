@@ -10,6 +10,7 @@ import SideFilters from "@/app/categories/components/SideFilters";
 import FiltersMobile from "./FilterMobile";
 import SortByPriceButton from "./SortByPriceButton";
 import { CategoryPagination } from "@/_pages/category/CategoryPagination";
+import { CategoryLongDescription } from "./CategoryLongDescription";
 
 export const CategoryProducts = ({
   filters,
@@ -228,7 +229,7 @@ export const CategoryProducts = ({
   return (
     <>
       <div
-        className={`sectionPaddingX bg-lightGray sticky top-[24px] z-[51] mt-10 flex items-center gap-5 pt-10 xl:hidden`}
+        className={`sectionPaddingX sticky top-[24px] z-[51] mt-10 flex items-center gap-5 bg-lightGray pt-10 xl:hidden`}
       >
         <button
           className={`flex flex-1 items-center justify-center overflow-hidden border border-primary bg-white py-2 text-center text-base md:text-lg`}
@@ -241,7 +242,7 @@ export const CategoryProducts = ({
         <>
           <div
             data-aos="fade-up"
-            className={`sectionPaddingX sectionPaddingY bg-lightGray flex gap-10 max-xl:hidden`}
+            className={`sectionPaddingX sectionPaddingY flex gap-10 bg-lightGray max-xl:hidden`}
           >
             <div className="max-md:hidden">
               <SideFilters
@@ -331,6 +332,11 @@ export const CategoryProducts = ({
             getPaginationArray={getPaginationArray}
           />
         )}
+      <Suspense
+        fallback={<div className={`h-10 w-full animate-pulse bg-slate-200`} />}
+      >
+        <CategoryLongDescription category_id={slug} />
+      </Suspense>
       <div
         className={
           filterOpen

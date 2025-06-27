@@ -32,16 +32,15 @@ const Footer = () => {
             <div>
               <div>Anker Experience Store:</div>
               <Link
-              href="https://www.google.com/maps/place/%D0%A2%D0%A6+%22%D0%93%D0%B0%D0%BB%D0%B5%D1%80%D0%B8%D1%98%D0%B0%22/@44.8021781,20.4440487,771m/data=!3m1!1e3!4m10!1m2!2m1!1sTC+Galerija+2.+sprat,+Beograd!3m6!1s0x475a6552e46a468f:0x8a7d95d9015cc2cf!8m2!3d44.8027352!4d20.4464364!15sCh1UQyBHYWxlcmlqYSAyLiBzcHJhdCwgQmVvZ3JhZFodIht0YyBnYWxlcmlqYSAyIHNwcmF0IGJlb2dyYWSSAQ9zaG9wcGluZ19jZW50ZXKaASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVUmhiVXBFWDFsQkVBRaoBbAoNL2cvMTFma3ZwbWZieBABKhciE3RjIGdhbGVyaWphIDIgc3ByYXQoHTIfEAEiG7IwwGHsc2T_Q6JoeCCbRl_jeT44WH99t87QaDIfEAIiG3RjIGdhbGVyaWphIDIgc3ByYXQgYmVvZ3JhZOABAPoBBQjRARAv!16s%2Fg%2F11fkvpmfbx?entry=ttu"
-              target="_blank"
-            >
-              <div className="font-light">TC Galerija 2. sprat, Beograd</div>
+                href="https://www.google.com/maps/place/%D0%A2%D0%A6+%22%D0%93%D0%B0%D0%BB%D0%B5%D1%80%D0%B8%D1%98%D0%B0%22/@44.8021781,20.4440487,771m/data=!3m1!1e3!4m10!1m2!2m1!1sTC+Galerija+2.+sprat,+Beograd!3m6!1s0x475a6552e46a468f:0x8a7d95d9015cc2cf!8m2!3d44.8027352!4d20.4464364!15sCh1UQyBHYWxlcmlqYSAyLiBzcHJhdCwgQmVvZ3JhZFodIht0YyBnYWxlcmlqYSAyIHNwcmF0IGJlb2dyYWSSAQ9zaG9wcGluZ19jZW50ZXKaASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVUmhiVXBFWDFsQkVBRaoBbAoNL2cvMTFma3ZwbWZieBABKhciE3RjIGdhbGVyaWphIDIgc3ByYXQoHTIfEAEiG7IwwGHsc2T_Q6JoeCCbRl_jeT44WH99t87QaDIfEAIiG3RjIGdhbGVyaWphIDIgc3ByYXQgYmVvZ3JhZOABAPoBBQjRARAv!16s%2Fg%2F11fkvpmfbx?entry=ttu"
+                target="_blank"
+              >
+                <div className="font-light">TC Galerija 2. sprat, Beograd</div>
               </Link>
             </div>
           </div>
-       
         </div>
-        
+
         <div className="flex items-center gap-1 max-xl:mt-10 max-sm:flex-col sm:gap-5">
           <a
             href="https://www.facebook.com/Anker.fans"
@@ -73,33 +72,46 @@ const Footer = () => {
       </div>
       <div className="flex justify-between gap-10 pt-8 max-xl:flex-col 2xl:gap-20">
         <div className="flex w-full flex-col">
-          <div className="flex flex-wrap items-center gap-1.5 text-[15px] max-sm:flex-col">
+          <div className="flex flex-wrap items-center gap-1 text-[15px] max-sm:flex-col">
             <Link
-              href={`/strana/uslovi-koriscenja`}
+              href={`/strana/opsti-uslovi-poslovanja`}
               className="hover:text-primary"
             >
-              Uslovi korišćenja
+              Opšti uslovi poslovanja
             </Link>
             <div className="bg-primary sm:mx-2 sm:h-3 sm:w-[1px]"></div>
-
+           
             <Link
-              href={`/strana/uslovi-koriscenja#politika-reklamacija`}
+              href={`/strana/opsti-uslovi-poslovanja#politika-reklamacija`}
               className="hover:text-primary"
             >
               Reklamacije
             </Link>
             <div className="bg-primary sm:mx-2 sm:h-3 sm:w-[1px]"></div>
-
             <Link
-              href={`/strana/uslovi-koriscenja#odustanak-od-ugovora`}
+              href={`/strana/politika-privatnosti`}
               className="hover:text-primary"
             >
-              Pravo na odustajanje
+              Politika privatnosti
+            </Link>
+            <div className="bg-primary sm:mx-2 sm:h-3 sm:w-[1px]"></div>
+            <Link
+              href={`/strana/politika-kolacica`}
+              className="hover:text-primary"
+            >
+              Politika kolačića
+            </Link>
+            <div className="bg-primary sm:mx-2 sm:h-3 sm:w-[1px]"></div>
+            <Link
+              href={`/strana/opsti-uslovi-poslovanja#pravo-na-odustajanje-od-ugovora`}
+              className="hover:text-primary"
+            >
+              Pravo na odustajanje od ugovora
             </Link>
             <div className="bg-primary sm:mx-2 sm:h-3 sm:w-[1px]"></div>
 
             <Link
-              href={`/strana/uslovi-koriscenja#politika-reklamacija`}
+              href={`/strana/opsti-uslovi-poslovanja#politika-reklamacija`}
               className="hover:text-primary"
             >
               Zamena artikala
@@ -132,28 +144,6 @@ const Footer = () => {
           </p>
           <div className="flex items-center gap-1">
             <a
-              href={`https://rs.visa.com/pay-with-visa/security-and-assistance/protected-everywhere.html`}
-              rel={"noreferrer"}
-              target={"_blank"}
-            >
-              <Image
-                src={"/icons/bank/visaSecure.webp"}
-                width={50}
-                height={30}
-                alt="Master Card"
-                className="h-[30px] w-auto rounded-md border border-white bg-white"
-              />
-            </a>
-            <div>
-              <Image
-                src={"/icons/bank/dinacard.webp"}
-                width={50}
-                height={30}
-                alt="Master Card"
-                className="h-[30px] w-auto rounded-md border border-white bg-white"
-              />
-            </div>
-            <a
               href={`http://www.mastercard.com/rs/consumer/credit-cards.html`}
               rel={"noreferrer"}
               target={"_blank"}
@@ -166,24 +156,19 @@ const Footer = () => {
                 className="h-[30px] w-auto rounded-md border border-white bg-white"
               />
             </a>
-            <div>
+            <a
+              href={`https://rs.visa.com/pay-with-visa/security-and-assistance/protected-everywhere.html`}
+              rel={"noreferrer"}
+              target={"_blank"}
+            >
               <Image
-                src={"/icons/bank/visa.webp"}
-                width={50}
-                height={30}
-                alt="Visa"
-                className="h-[30px] w-auto rounded-md border border-white bg-white"
-              />
-            </div>
-            <div>
-              <Image
-                src={"/icons/bank/maestro.webp"}
+                src={"/icons/bank/visaSecure.webp"}
                 width={50}
                 height={30}
                 alt="Master Card"
                 className="h-[30px] w-auto rounded-md border border-white bg-white"
               />
-            </div>
+            </a>
             <a
               href={`https://www.otpbanka.rs`}
               rel={"noreferrer"}
@@ -206,13 +191,31 @@ const Footer = () => {
                 className="h-[30px] w-auto rounded-md border border-white bg-white"
               />
             </div>
-
             <div>
               <Image
-                src={"/icons/bank/american.webp"}
+                src={"/icons/bank/maestro.webp"}
                 width={50}
                 height={30}
                 alt="Master Card"
+                className="h-[30px] w-auto rounded-md border border-white bg-white"
+              />
+            </div>
+            <div>
+              <Image
+                src={"/icons/bank/dinacard.webp"}
+                width={50}
+                height={30}
+                alt="Master Card"
+                className="h-[30px] w-auto rounded-md border border-white bg-white"
+              />
+            </div>
+
+            <div>
+              <Image
+                src={"/icons/bank/visa.webp"}
+                width={50}
+                height={30}
+                alt="Visa"
                 className="h-[30px] w-auto rounded-md border border-white bg-white"
               />
             </div>
@@ -230,11 +233,11 @@ const Footer = () => {
             />
           </div>
           <div className="text-[15px]">
-          <Link
+            <Link
               href="https://www.google.com/maps/place/%D0%9A%D0%BD%D0%B5%D0%B3%D0%B8%D1%9A%D0%B5+%D0%97%D0%BE%D1%80%D0%BA%D0%B5+25,+%D0%91%D0%B5%D0%BE%D0%B3%D1%80%D0%B0%D0%B4+11000/@44.8009529,20.4692087,771m/data=!3m2!1e3!4b1!4m6!3m5!1s0x475a700af8d1c09f:0xb9b11943161101fc!8m2!3d44.8009529!4d20.4692087!16s%2Fg%2F11bw4hbgv3?entry=ttu"
               target="_blank"
             >
-            <div>Kneginje Zorke 25, Beograd, Srbija</div>
+              <div>Kneginje Zorke 25, Beograd, Srbija</div>
             </Link>
             <div className="flex items-center max-sm:flex-col max-sm:items-start sm:gap-2">
               <a

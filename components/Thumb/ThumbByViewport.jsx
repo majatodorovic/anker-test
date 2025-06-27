@@ -12,7 +12,6 @@ import { Navigation, Pagination } from "swiper/modules";
 import { convertHttpToHttps } from "@/helpers/convertHttpToHttps";
 import { get as GET } from "@/api/api";
 import { useQuery } from "@tanstack/react-query";
-import PurchasingDisabledButton from "./components/PurchasingDisabledButton";
 import { truncateText } from "@/helpers/truncateText";
 import noImage from "../../public/images/placeholder.jpg";
 
@@ -221,25 +220,17 @@ const ThumbByViewport = ({ id, is_details = false, apiLink, light }) => {
         <div className="mb-2 line-clamp-2 h-[45px] text-left text-[15px] font-light text-[#515151]">
           {product?.basic_data?.short_description}
         </div>
-        {product?.behaviours?.customer_settings?.product_price
-          ?.display_to_guest && (
-          <ProductPrice
-            price={product?.price}
-            inventory={product?.inventory}
-            is_details={is_details}
-          />
-        )}
-        {!product?.behaviours?.customer_settings?.purchase
-          ?.allow_purchase_to_guest ? (
-          <PurchasingDisabledButton />
-        ) : (
-          <Link
-            href={`/${product?.link?.link_path}`}
-            className="mainButton w-full !max-w-[230px] !py-2.5 text-center"
-          >
-            Dodajte u korpu
-          </Link>
-        )}
+        <ProductPrice
+          price={product?.price}
+          inventory={product?.inventory}
+          is_details={is_details}
+        />
+        <Link
+          href={`/${product?.link?.link_path}`}
+          className="mainButton w-full !max-w-[230px] !py-2.5 text-center"
+        >
+          Dodajte u korpu
+        </Link>
       </div>
     </div>
   );

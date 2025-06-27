@@ -48,7 +48,7 @@ function HeaderTop() {
       </div>
       <div className="flex items-center">
         <Link
-          href="/o-nama"
+          href="/strana/o-nama"
           className="relative w-fit text-xs font-normal text-white hover:text-primary"
         >
           O nama
@@ -63,7 +63,7 @@ function HeaderTop() {
         <div className="mx-[18px] h-3 w-[1px] bg-primary"></div>
 
         <Link
-          href="/pomoć-pri-kupovini"
+          href="/strana/kako-kupiti"
           className="relative w-fit text-xs font-normal text-white hover:text-primary"
         >
           Pomoć pri kupovini

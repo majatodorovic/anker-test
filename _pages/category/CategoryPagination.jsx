@@ -29,7 +29,7 @@ export const CategoryPagination = ({
   };
 
   return (
-    <div className="sectionPaddingX bg-lightGray mb-[80px] pb-[100px] 2xl:mb-[140px]">
+    <div className="sectionPaddingX bg-lightGray pb-[100px]">
       <div className="flex w-full items-center gap-2 xl:pl-[350px]">
         {data.pagination.selected_page > 1 && (
           <Link
