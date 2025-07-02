@@ -258,7 +258,7 @@ export const CategoryProducts = ({
                 setChangeFilters={setChangeFilters}
               />
             </div>
-            <div className="flex flex-col gap-10">
+            <div className="flex w-full flex-col gap-10">
               <div className="max-xl:hidden">
                 <SortByPriceButton />
               </div>

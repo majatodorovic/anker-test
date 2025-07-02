@@ -33,10 +33,10 @@ const GeneralTermsOfUseField = ({
           Saglasan sam sa{" "}
           <a
             className={`underline`}
-            href={`/strana/uslovi-koriscenja`}
+            href={`/strana/opsti-uslovi-poslovanja`}
             target={`_blank`}
           >
-            <span>Opštim uslovima korišćenja</span>
+            <span>Opštim uslovima poslovanja</span>
           </a>
         </label>
       </div>

@@ -120,7 +120,7 @@ const NavigationMobile = () => {
             <div className="relative">
               <Image
                 alt={`logo`}
-                src={"/images/logo/logo.svg"}
+                src={"/images/logo/logo.png"}
                 width={150}
                 height={33}
                 className="h-auto w-36"
@@ -224,7 +224,7 @@ const NavigationMobile = () => {
             onClick={() => setMenuOpen(false)}
           ></i>
           <Image
-            src="/images/logo/logo.svg"
+            src="/images/logo/logo.png"
             width={150}
             height={150}
             alt="logo"

@@ -115,22 +115,22 @@ const RenderSlider = ({ banners }) => {
               target={banner?.target ?? "_self"}
               className="absolute left-0 top-0 z-[49] h-full w-full bg-black bg-opacity-0 transition-all duration-500"
             >
-              <div className="absolute left-10 top-1/2 flex max-w-[320px] -translate-y-1/2 transform flex-col gap-5 text-left md:left-[70px]">
+              <div className="absolute left-6 top-[200px] flex max-w-[320px] -translate-y-1/2 transform flex-col gap-5 text-left md:left-10 md:left-[70px] md:top-1/2">
                 {banner?.title && (
                   <h1
-                    className="text-base font-medium text-[#FF9900] lg:text-lg"
+                    className="text-base font-medium text-primary lg:text-lg"
                     dangerouslySetInnerHTML={{ __html: banner?.title }}
                   />
                 )}
                 {banner?.subtitle && (
                   <h2
-                    className="text-3xl font-bold text-black lg:text-4xl"
+                    className="text-3xl font-bold text-white md:text-black lg:text-4xl"
                     dangerouslySetInnerHTML={{ __html: banner?.subtitle }}
                   />
                 )}
                 {banner?.text && (
                   <p
-                    className="text-base font-light text-black lg:text-[17px]"
+                    className="text-base font-light text-white md:text-black lg:text-[17px]"
                     dangerouslySetInnerHTML={{ __html: banner?.text }}
                   ></p>
                 )}

@@ -1,45 +1,49 @@
 "use client";
 import Link from "next/link";
 
-// Mapa slugova u naslove sa dijakritikom
-const slugToTitleMap = {
-  "uslovi-koriscenja": "Uslovi korišćenja",
-  "opsti-uslovi-poslovanja": "Opšti uslovi poslovanja",
-  "politika-kolacica": "Politika kolačića",
-  // Dodaj ostale slugove koje koristiš
-};
-
-// Funkcija koja vraća pravi naslov iz sluga
-const slugToTitle = (slug) => {
-  if (!slug) return "";
-  return (
-    slugToTitleMap[slug] ||
-    slug
-      .split("-")
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(" ")
-  );
-};
-
 const BreadcrumbsStatic = ({ title, breadcrumbs = [] }) => {
+  const capitalize = (s) => s && s.charAt(0).toUpperCase() + s.slice(1);
+
+  // Mapa slugova u naslove sa dijakritikom
+  const slugToTitleMap = {
+    "uslovi-koriscenja": "Uslovi korišćenja",
+    "opsti-uslovi-poslovanja": "Opšti uslovi poslovanja",
+    "politika-kolacica": "Politika kolačića",
+    // Dodaj ostale slugove koje koristiš
+  };
+
+  // Funkcija koja vraća pravi naslov iz sluga
+  const slugToTitle = (slug) => {
+    if (!slug) return "";
+    return (
+      slugToTitleMap[slug] ||
+      slug
+        .split("-")
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ")
+    );
+  };
+
   return (
     <div data-aos="fade-right" className="sectionPaddingX w-full bg-white">
       <div className="mb-20 flex items-center gap-2 overflow-x-auto pb-2 pt-10">
-        <Link className="text-base font-light" href={`/`}>
-          Početna
+        <Link className="text-base font-light" href="/">
+          Anker
         </Link>
+
         {breadcrumbs.map((breadcrumb, index) => {
-          const slug = breadcrumb?.url?.slug || breadcrumb.name;
-          const label = slugToTitle(slug);
+          const isLast = index + 1 === breadcrumbs.length;
+          const slugKey = breadcrumb.name.toLowerCase().replaceAll(" ", "-");
+          const label = slugToTitleMap[slugKey] || capitalize(breadcrumb.name);
 
           return (
             <div key={index} className="flex">
               <span className="mx-2 text-base">/</span>
               {breadcrumb.url ? (
                 <Link
-                  href={`/${slug}`}
+                  href={breadcrumb.url}
                   className={`whitespace-nowrap font-light ${
-                    index + 1 === breadcrumbs.length ? "text-primary underline" : ""
+                    isLast ? "text-primary underline" : ""
                   }`}
                 >
                   {label}
@@ -47,7 +51,7 @@ const BreadcrumbsStatic = ({ title, breadcrumbs = [] }) => {
               ) : (
                 <div
                   className={`whitespace-nowrap font-light ${
-                    index + 1 === breadcrumbs.length ? "text-primary underline" : ""
+                    isLast ? "text-primary underline" : ""
                   }`}
                 >
                   {label}

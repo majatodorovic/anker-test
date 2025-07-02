@@ -70,20 +70,24 @@ export const metadata = {
   },
   title: "Početna | Anker",
   description: "Dobrodošli na Anker",
-  alternates: {
-    // canonical: "https://croonus.com",
-  },
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
-    title: "Anker - Farmerke, Muške farmerke, Muška odeća",
-    description: "Dobrodošli na Anker",
+    title: "Početna | Anker",
+    description: "Dobrodošli na Anker Online Shop",
     type: "website",
-    // url: "https://croonus.com",
-    // image: "https://croonus.com/images/logo.png",
-    // site_name: "croonus.com",
+    url: "https://www.ankersrbija.rs/",
+    siteName: "Anker Srbija",
+    images: [
+      {
+        url: "https://www.ankersrbija.rs/images/logo/logo.png", 
+        width: 800,
+        height: 600,
+        alt: "Anker",
+      },
+    ],
     locale: "sr_RS",
   },
 };

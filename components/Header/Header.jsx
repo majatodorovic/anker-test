@@ -115,7 +115,7 @@ const Header = () => {
           <div className="flex items-center gap-10">
             <Link href="/">
               <Image
-                src="/images/logo/logo.svg"
+                src="/images/logo/logo.png"
                 width={185}
                 height={39}
                 className="min-w-[100px] object-cover"

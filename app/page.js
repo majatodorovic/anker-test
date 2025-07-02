@@ -104,7 +104,7 @@ export const generateMetadata = async () => {
       type: "website",
       images: [
         {
-          url: data?.social?.share_image ?? "",
+          url: data?.social?.share_image ?? "https://www.ankersrbija.rs/images/logo/logo.png",
           width: 800,
           height: 600,
           alt: "Anker",

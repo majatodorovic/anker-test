@@ -11,7 +11,7 @@ const Footer = () => {
           <div>
             <Link href={`/`}>
               <Image
-                src={"/images/logo/logo.svg"}
+                src={"/images/logo/logo.png"}
                 width={214}
                 height={45}
                 alt="Croonus Logo"
@@ -68,6 +68,15 @@ const Footer = () => {
           >
             Youtube
           </a>
+          <div className="bg-primary sm:mx-2 sm:h-3 sm:w-[1px]"></div>
+          <a
+            href="https://www.tiktok.com/discover/anker-srbija"
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-primary"
+          >
+            TikTok
+          </a>
         </div>
       </div>
       <div className="flex justify-between gap-10 pt-8 max-xl:flex-col 2xl:gap-20">
@@ -80,7 +89,7 @@ const Footer = () => {
               Opšti uslovi poslovanja
             </Link>
             <div className="bg-primary sm:mx-2 sm:h-3 sm:w-[1px]"></div>
-           
+
             <Link
               href={`/strana/opsti-uslovi-poslovanja#politika-reklamacija`}
               className="hover:text-primary"
@@ -127,9 +136,12 @@ const Footer = () => {
               O nama
             </Link>
             <div className="bg-primary sm:mx-2 sm:h-3 sm:w-[1px]"></div>
-
             <Link href={`/kontakt`} className="hover:text-primary">
               Kontakt
+            </Link>
+            <div className="bg-primary sm:mx-2 sm:h-3 sm:w-[1px]"></div>
+            <Link href={`/sve-kategorije`} className="hover:text-primary">
+              Kategorije
             </Link>
           </div>
           <p className="mb-[50px] mt-[50px] max-w-[680px] text-[13px] lg:mt-[90px]">
@@ -140,7 +152,14 @@ const Footer = () => {
             garantovati da su sve informacije kompletne i bez grešaka. Svi
             artikli prikazani na sajtu su deo naše ponude i ne podrazumeva da su
             dostupni u svakom trenutku. Raspoloživost robe možete proveriti
-            pozivanjem Call Centra na +381 11 200 200 (po ceni lokalnog poziva).
+            pozivanjem Call Centra na{" "}
+            <a
+              href={`tel:${process.env.TELEPHONE}`}
+              className="hover:text-primary"
+            >
+              {process.env.TELEPHONE}
+            </a>{" "}
+            (po ceni lokalnog poziva).
           </p>
           <div className="flex items-center gap-1">
             <a
@@ -226,7 +245,7 @@ const Footer = () => {
           <div className="mt-12 text-sm">Generalni zastupnik:</div>
           <div className="mb-2 mt-5">
             <Image
-              src={"/images/logo/logo.png"}
+              src={"/images/logo/logo-atom.png"}
               width={168}
               height={30}
               alt="Logo"

@@ -80,27 +80,10 @@ const ThumbByViewport = ({ id, is_details = false, apiLink, light }) => {
     >
       <div className={`relative !aspect-square w-full overflow-hidden`}>
         <div className="absolute left-0 top-0 z-10 h-1 w-full bg-primary opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-
         <Swiper
           modules={[Navigation, Pagination]}
-          pagination={true}
           rewind
-          breakpoints={{
-            320: {
-              navigation: {
-                enabled: false,
-              },
-            },
-            1024: {
-              navigation: {
-                enabled: true,
-              },
-              pagination: {
-                enabled: false,
-              },
-            },
-          }}
-          className={`categoryImageSwiper relative h-full w-full`}
+          className="categoryImageSwiper relative hidden h-full w-full md:block"
         >
           {imageList.map(
             (
@@ -129,31 +112,6 @@ const ThumbByViewport = ({ id, is_details = false, apiLink, light }) => {
             ),
           )}
         </Swiper>
-        <div
-          id="thumb-onhover-actions"
-          className="align-center chevrons absolute z-10 flex w-full justify-center bg-white"
-          style={{
-            width: "calc(100% - 12px)",
-            margin: "0 6px",
-            bottom: "6px",
-            padding: "0",
-          }}
-        >
-          <div
-            className="group mx-3 my-1 cursor-pointer rounded-full p-2 hover:bg-primary"
-            title="Kupi"
-          >
-            <Link href={`/${product?.link?.link_path}`}>
-              <Image
-                src={"/icons/shopping-bag.png"}
-                className="group-hover:invert"
-                alt="buy"
-                width={23}
-                height={23}
-              />
-            </Link>
-          </div>
-        </div>
         {product?.price?.discount?.active ? (
           <div className="absolute right-5 top-5 z-[1] font-light text-white">
             {product?.price?.discount?.campaigns?.map(

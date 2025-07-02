@@ -77,26 +77,10 @@ export const Thumb = forwardRef(
           <div className="absolute left-0 top-0 z-10 h-1 w-full bg-primary opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
           <Swiper
             modules={[Navigation, Pagination]}
-            pagination={true}
             rewind
             initialSlide={product?.image?.findIndex(
               (item) => item === product?.image[0],
             )}
-            breakpoints={{
-              320: {
-                navigation: {
-                  enabled: false,
-                },
-              },
-              1024: {
-                navigation: {
-                  enabled: true,
-                },
-                pagination: {
-                  enabled: false,
-                },
-              },
-            }}
             className={`categoryImageSwiper relative h-full w-full`}
           >
             {imageList?.map((item, index) => {
@@ -113,7 +97,7 @@ export const Thumb = forwardRef(
               }
 
               return (
-                <SwiperSlide key={`${slug}-${index}`} className="">
+                <SwiperSlide key={`${slug}-${index}`} className="!w-full">
                   <Link href={link} className="cursor-pointer">
                     <Image
                       ref={ref}

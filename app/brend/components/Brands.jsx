@@ -21,7 +21,7 @@ const Brands = () => {
   }, [searchParams]);
 
   const { data } = useProducts({
-    limit: 9,
+    limit: 12,
     page: page,
     render: false,
     sort: { field: "", direction: "" },
