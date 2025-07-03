@@ -27,7 +27,7 @@ const BreadcrumbsStatic = ({ title, breadcrumbs = [] }) => {
   return (
     <div data-aos="fade-right" className="sectionPaddingX w-full bg-white">
       <div className="mb-20 flex items-center gap-2 overflow-x-auto pb-2 pt-10">
-        <Link className="text-base font-light" href="/">
+        <Link className={`text-base font-light`} href={`/`}>
           Anker
         </Link>
 
@@ -42,17 +42,13 @@ const BreadcrumbsStatic = ({ title, breadcrumbs = [] }) => {
               {breadcrumb.url ? (
                 <Link
                   href={breadcrumb.url}
-                  className={`whitespace-nowrap font-light ${
-                    isLast ? "text-primary underline" : ""
-                  }`}
+                  className={`whitespace-nowrap font-light ${index + 1 === breadcrumbs.length && "text-primary underline"}`}
                 >
                   {label}
                 </Link>
               ) : (
                 <div
-                  className={`whitespace-nowrap font-light ${
-                    isLast ? "text-primary underline" : ""
-                  }`}
+                className={`whitespace-nowrap font-light ${index + 1 === breadcrumbs.length && "text-primary underline"}`}
                 >
                   {label}
                 </div>
